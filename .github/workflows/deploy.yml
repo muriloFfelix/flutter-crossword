@@ -1,27 +1,36 @@
 name: Deploy Flutter Web
-
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        
+
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.29.3'
-          
-      - run: flutter pub get
-      - run: flutter build web --release --base-href /flutter-crossword/
-      
-      - name: List build files
-        run: ls -la build/web/
-        
+
+      - run: |
+          flutter pub get
+          flutter clean
+          flutter build web \
+            --release \
+            --base-href /flutter-crossword/ \
+            --pwa-strategy none \
+            --web-renderer html
+
+      - name: Verify Build Files
+        run: |
+          echo "=== BUILD FOLDER CONTENTS ==="
+          ls -la build/web/
+          echo "=== INDEX.HTML CONTENTS ==="
+          head -n 20 build/web/index.html
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-          keep_files: false
+          force_orphan: true
