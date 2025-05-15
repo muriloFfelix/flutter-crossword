@@ -21,7 +21,7 @@ jobs:
       - run: flutter pub get
 
       # 4. Build for web (replace YOUR-REPO-NAME)
-      - run: flutter build web --release --base-href /YOUR-REPO-NAME/
+      - run: flutter build web --release --base-href /flutter-crossword/
 
       # 5. Deploy to gh-pages branch
       - uses: peaceiris/actions-gh-pages@v3
