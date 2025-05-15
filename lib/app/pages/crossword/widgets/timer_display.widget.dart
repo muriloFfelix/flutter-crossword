@@ -10,6 +10,7 @@ class TimerDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TimerCubit, TimerState>(
       builder: (context, state) {
+        print('Current state: $state');
         final minutes = (state.seconds ~/ 60).toString().padLeft(2, '0');
         final seconds = (state.seconds % 60).toString().padLeft(2, '0');
 
