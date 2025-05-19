@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:localstorage/localstorage.dart';
 import 'package:matt/app/pages/crossword/cubits/crossword_states.dart';
 import 'package:matt/app/pages/crossword/data/words_data.dart';
 import 'package:matt/app/pages/crossword/data/grid_data.dart';
@@ -56,6 +57,8 @@ class CrosswordCubit extends Cubit<CrosswordState> {
 
     bool hadLetter = activeCell.inputLetter != null;
     activeCell.inputLetter = letter;
+    localStorage.setItem('${activeCell.position.$1}${activeCell.position.$2}',
+        activeCell.inputLetter!);
 
     if (checkGridCompletion()) return;
 
@@ -83,6 +86,9 @@ class CrosswordCubit extends Cubit<CrosswordState> {
     }
 
     activeCell.inputLetter = null;
+
+    localStorage
+        .removeItem('${activeCell.position.$1}${activeCell.position.$2}');
 
     emit(InitialCrosswordState());
   }
@@ -170,4 +176,6 @@ class CrosswordCubit extends Cubit<CrosswordState> {
   setElapsedTime(int time) {
     timeElapsed = time;
   }
+
+  _saveInputLocally() {}
 }

@@ -1,3 +1,4 @@
+import 'package:localstorage/localstorage.dart';
 import 'package:matt/app/pages/crossword/data/words_data.dart';
 
 Grid gridData = Grid.generateGrid(13, 14, [
@@ -97,11 +98,13 @@ class LetterCell extends GridCell {
   static LetterCell fromPosition((int, int) position) {
     Word? acrossWord = getAcrossWord(position);
     Word? downWord = getDownWord(position);
+    String? savedInput = localStorage.getItem('${position.$1}${position.$2}');
 
     return LetterCell(
       position,
       acrossWord: acrossWord,
       downWord: downWord,
+      inputLetter: savedInput,
       clueNumber: position == acrossWord?.wordStartPosition
           ? acrossWord?.clueNumber
           : position == downWord?.wordStartPosition

@@ -37,7 +37,8 @@ class SolvedDialog extends StatelessWidget {
               Text(
                 '$minutes:$seconds',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Spacer(),
               TextButton(
