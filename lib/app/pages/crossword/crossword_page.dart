@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:localstorage/localstorage.dart';
 import 'package:matt/app/pages/crossword/cubits/crossword_cubit.dart';
 import 'package:matt/app/pages/crossword/cubits/crossword_states.dart';
 import 'package:matt/app/pages/crossword/cubits/timer_cubit.dart';

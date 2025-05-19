@@ -335,7 +335,7 @@ List<Word> wordsData = [
     wordStartPosition: (0, 3),
   ),
   Word(
-    clue: "High deg.",
+    clue: "High education deg.",
     clueNumber: 4,
     direction: WordDirection.down,
     answer: 'engr',
@@ -349,7 +349,7 @@ List<Word> wordsData = [
     wordStartPosition: (0, 5),
   ),
   Word(
-    clue: "Attacks from far away, for short",
+    clue: "Hacker attacks from far away, for short",
     clueNumber: 6,
     direction: WordDirection.down,
     answer: 'rce',
@@ -398,7 +398,7 @@ List<Word> wordsData = [
     wordStartPosition: (2, 0),
   ),
   Word(
-    clue: "Inferior whool",
+    clue: "Inferior wool",
     clueNumber: 17,
     direction: WordDirection.down,
     answer: 'abb',
@@ -440,14 +440,14 @@ List<Word> wordsData = [
     wordStartPosition: (4, 10),
   ),
   Word(
-    clue: "Betel leaf indian wrap",
+    clue: "Betel leaf indian wrap (or just a longer french bread?)",
     clueNumber: 27,
     direction: WordDirection.down,
     answer: 'paan',
     wordStartPosition: (5, 3),
   ),
   Word(
-    clue: "Angry demonstrations of discontent on a text, maybe",
+    clue: "Angry demonstrations of discontent on a text, possibly",
     clueNumber: 28,
     direction: WordDirection.down,
     answer: 'ytfs',
